@@ -2,7 +2,7 @@ class OauthConfig < YamlRecord::Base
 
   properties :oauth_id, :oauth_secret
 
-  adapter :local 
+  adapter :redis, $redis
 
-  source Rails.root.join("config/oauth_config")
+  source "oauth_config"
 end
